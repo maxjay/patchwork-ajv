@@ -1,1 +1,1 @@
-export { validate, type ErrorObject } from './validate.js';
+export { validate, type ErrorObject, type Options } from './validate.js';

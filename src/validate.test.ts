@@ -78,4 +78,16 @@ describe('validate', () => {
   it('returns [] for an empty schema (anything is valid)', () => {
     expect(validate({ draft: { whatever: true } }, {})).toEqual([]);
   });
+
+  it('passes ajv options through (e.g. $data references)', () => {
+    const schemaWithData = {
+      type: 'object',
+      properties: {
+        min: { type: 'number' },
+        value: { type: 'number', minimum: { $data: '1/min' } },
+      },
+    };
+    expect(validate({ min: 5, value: 10 }, schemaWithData, { $data: true })).toEqual([]);
+    expect(validate({ min: 5, value: 3 }, schemaWithData, { $data: true }).length).toBeGreaterThan(0);
+  });
 });
