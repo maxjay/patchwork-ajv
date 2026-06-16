@@ -31,6 +31,10 @@
     "typescript": "^6.0.3",
     "vitest": "^4.1.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxjay/patchwork-ajv"
+  },
   "publishConfig": {
     "access": "public"
   }
