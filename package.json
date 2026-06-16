@@ -1,6 +1,6 @@
 {
   "name": "@maxjay/patchwork-ajv",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "AJV JSON Schema validation for patchwork Engine/NodeEngine drafts.",
   "type": "module",
   "main": "dist/index.js",

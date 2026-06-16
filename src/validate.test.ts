@@ -79,6 +79,15 @@ describe('validate', () => {
     expect(validate({ draft: { whatever: true } }, {})).toEqual([]);
   });
 
+  it('supports custom keywords', () => {
+    const keyword = {
+      keyword: 'x-must-be-hello',
+      validate: (_schema: unknown, data: unknown) => data === 'hello',
+    };
+    expect(validate('hello', { 'x-must-be-hello': true }, undefined, [keyword])).toEqual([]);
+    expect(validate('world', { 'x-must-be-hello': true }, undefined, [keyword]).length).toBeGreaterThan(0);
+  });
+
   it('passes ajv options through (e.g. $data references)', () => {
     const schemaWithData = {
       type: 'object',
