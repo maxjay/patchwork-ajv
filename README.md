@@ -122,3 +122,7 @@ Key fields:
 | `keyword` | The failing keyword (`required`, `type`, `minimum`, …) |
 | `message` | Human-readable error string |
 | `params` | Keyword-specific details (e.g. `{ missingProperty: 'id' }`) |
+
+## License
+
+Apache-2.0
